@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid"
+style="background-image: url(/static/image/background/1-IT.jpg);">
+
+    <div class="container" style="padding-top: 100px ;">
+        <div class="row">
+            {% if managers %}
+                {% for manager in managers %}
+                    <div class="col-md-6 mx-auto">
+                            <figure class="snip1515 mx-auto">
+                                <div class="profile-image">
+                                    <img src="{{manager.picture}}"/>
+                                </div>
+                                <figcaption>
+                                    <h3>{{manager.name}}</h3>
+                                    <h4>{{manager.role}}</h4>
+                                    <p>{{manager.department}}</p>
+                                    <p>{{manager.grade}} </p>
+                                    <div class="icons ">
+                                        <a href="mailto:{{manager.email}}"><i class="fa fa-envelope"></i></a>
+                                        <a href="{{manager.linkedin}}"> <i class="fa fa-linkedin"></i></a>
+                                        <a href="{{manager.instagram}}"> <i class="fa fa-instagram"></i></a>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                    </div>
+                {%endfor%}
+            {%endif%}   
+        </div>
+    </div>
+</div>
+
+{% endblock %}

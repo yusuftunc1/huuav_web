@@ -1,0 +1,171 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div style="background-color: #031d34;">
+
+        <!--mainpage-->
+        <div class="jumbotron text-white" style="
+        background-image: url('/static/image/background/14-IT.jpg') ;">
+            <div class="container" style="padding-top:15%; padding-bottom:10%;">
+                
+                <div class="col-md-6 px-0">
+                    <h1 class="display-4 font-italic">
+                        HACETTEPE ÜNİVERSİTESİ İNSANSIZ HAVA ARAÇLARI TOPLULUĞU  
+                    </h1>
+                    <p class="lead my-3">
+                        HACETTEPE ÜNİVERSİTESİ İNSANSIZ HAVA ARAÇLARI TOPLULUĞU  
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!--about us-->
+        <section class="about-us-area">
+            <div class="container" style="padding-top:5%; padding-bottom:5%;">
+                <div class="row align-items-center">
+
+                    <div class="col-12 col-md-6">
+                        <div class="about-content-text mb-80">
+                            <p class="text-white display-4 font-italic ">BİZ KİMİZ? </p>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 200px; background-color: #7c4dff; height: 2px"/>
+                            <p class="text-white lead my-3">    
+                                HUUAV Topluluğumuz, 2015 yılında Elektrik-Elektronik Mühendisliği bölümü bünyesinde çalışmalara başlamıştır. 
+                                <br>
+                                Temel hedefimiz, öğrencilik hayatımız devam ederken mühendislik hayatına hazırlanmak ve sahip olduğumuz teorik bilgiyi pratiğe dönüştürmektir. 
+                                <br>
+                                Kurulduğumuzdan beri her sene bu hedefe; önemli firmalara geziler düzenleyerek, alanında başarılı insanları seminerlerimize davet ederek, kapsamlı eğitimler vererek, ulusal ve uluslararası yarışmalara katılarak ve kendi ARGE projelerimizi yaparak ulaşmaktayız.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img width="80%" src="/static/image/logo/logo_white.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--announcement-->
+        <section class="announcement-area">
+            <div class="jumbotron" style="
+            background-image: url('/static/image/background/4-IT.jpg');">
+                <div class="container " style="padding-top:5%; padding-bottom:5%;">
+                    <div class="row">
+                        <p class="display-4 font-italic text-white" style="padding-bottom: 5%;">
+                            DUYURULAR
+                        </p>
+                    </div>
+                    <div class="row">
+                        {% if announcements %}
+                            <div class="col-lg-4" >
+                                {% for anns in announcements %}
+                                    {% if anns.column == 1 %}
+                                        <div class="card " >
+                                            {% if anns.picturename != Null %}
+                                                <img src="{{anns.picturename}}" class="card-img-top img-thumbnail" style="height:10%;">
+                                            {%endif%}
+                                            <div class="card-body text-center">
+                                                <h4 class="card-title">{{anns.title}}</h4>
+                                                <p class="card-text">
+                                                    {{anns.text}}
+                                                </p>
+                                            </div>
+                                            {% if anns.postdate != Null %}
+                                                <div class="card-footer text-muted">
+                                                    {{anns.postdate}}
+                                                </div>
+                                            {%endif%}
+                                        </div>
+                                        <br>
+                                    {%endif%}
+                                {% endfor %}
+                            </div>
+                            <div class="col-lg-4" >
+                                {% for anns in announcements %}
+                                    {% if anns.column == 2 %}
+                                        <div class="card" >
+                                            {% if anns.picturename != Null %}
+                                                <img src="{{anns.picturename}}" class="card-img-top img-thumbnail" style="height:10%;">
+                                            {%endif%}
+                                            <div class="card-body text-center">
+                                                <h4 class="card-title">{{anns.title}}</h4>
+                                                <p class="card-text">
+                                                    {{anns.text}}
+                                                </p>
+                                            </div>
+                                            {% if anns.postdate != Null %}
+                                                <div class="card-footer text-muted">
+                                                    {{anns.postdate}}
+                                                </div>
+                                            {%endif%}
+                                        </div>
+                                        <br>
+                                    {%endif%}
+                                {% endfor %}
+                            </div>
+                            <div class="col-lg-4" >
+                                {% for anns in announcements %}
+                                    {% if anns.column == 3 %}
+                                        <div class="card" >
+                                            {% if anns.picturename != Null %}
+                                                <img src="{{anns.picturename}}" class="card-img-top img-thumbnail" style="height:10%;">
+                                            {%endif%}
+                                            <div class="card-body text-center">
+                                                <h4 class="card-title">{{anns.title}}</h4>
+                                                <p class="card-text">
+                                                    {{anns.text}}
+                                                </p>
+                                            </div>
+                                            {% if anns.postdate != Null %}
+                                                <div class="card-footer text-muted">
+                                                    {{anns.postdate}}
+                                                </div>
+                                            {%endif%}
+                                        </div>
+                                        <br>
+                                    {%endif%}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- images -->
+        <section class="image-area" >
+            <div class="mx-auto"> 
+                <div id="slider" class="carousel slide carousel-fade"  data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="/static/image/mainpage/3.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/static/image/mainpage/2.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/static/image/mainpage/1.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/static/image/mainpage/4.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/static/image/mainpage/5.jpg" alt="">
+                        </div>
+                    </div>
+            
+                    <a href="#slider" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#slider" class="carousel-control-next" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+            
+                </div>
+            </div>
+        </section>
+
+
+    </div> 
+{% endblock %}

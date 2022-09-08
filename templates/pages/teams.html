@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+
+        <!-- team info -->
+        <section class="team-info text-white" style="background-color: #031d34 ;">
+                {% if teamdescribtion %}
+                    {% for team in teamdescribtion %}
+                        <div class="container" style="padding-top:18%; padding-bottom:13%;">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="about-content-text mb-80">
+                                        <p class="text-white display-4 font-italic ">{{team.teamname}} </p>
+                                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                            style="width: 150px; background-color: #7c4dff; height: 2px"/>
+                                        <p class="text-white lead my-3">
+                                            {{team.teamdescribtion}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mx-auto">
+                                    <img width="80%" src="{{team.teamlogo}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {%endif%}
+            
+        </section>
+ 
+
+        <!-- team members -->
+        <section class="team-members">
+            {% if teammemberss %}
+            <div class="jumbotron " 
+            style="background-image: url('/static/image/background/10-IT.jpg') ;">      
+                <div class="container">
+
+                    <!--KAPTAN-->
+                    <p class="display-4 font-italic text-white"> KAPTAN </p>
+                    <div class="row"> 
+                        {% for members in teammemberss %}
+                            {% if members.role == 'kaptan' %}
+                                <div class="col-lg-3 mx-auto">
+                                    <div class="our-team">
+                                        <div class="picture">
+                                            <img class="img-fluid" src="{{members.image}}">
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name">{{members.name}}</h3>
+                                            <h4 class="title">{{members.department}}</h4>
+                                        </div>
+                                        <ul class="social">
+                                            <li><a href="{{members.github}}" class="fab fa-github" aria-hidden="true"></a></li>
+                                            <li><a href="{{members.instagram}}" class="fab fa-instagram" aria-hidden="true"></a></li>
+                                            <li><a href="mailto:{{members.email}}"class="fa fa-envelope" aria-hidden="true"></a></li>
+                                           <li><a href="{{members.linkedin}}" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>            
+
+                    <!--ELEKTRONİK-->
+                    <p class="display-4 font-italic text-white"> ELEKTRONİK </p>
+                    <div class="row">
+                        {% for members in teammemberss %}
+                            {% if members.role == 'elektronik' %}
+                                <div class="col-lg-3 mx-auto">
+                                    <div class="our-team">
+                                        <div class="picture">
+                                            <img class="img-fluid" src="{{members.image}}">
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name">{{members.name}}</h3>
+                                            <h4 class="title">{{members.department}}</h4>
+                                        </div>
+                                        <ul class="social">
+                                            <li><a href="{{members.github}}" class="fab fa-github" aria-hidden="true"></a></li>
+                                            <li><a href="{{members.instagram}}" class="fab fa-instagram" aria-hidden="true"></a></li>
+                                            <li><a href="mailto:{{members.email}}" class="fa fa-envelope" aria-hidden="true"></a></li>
+                                           <li><a href="{{members.linkedin}}" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div> 
+                    
+                    <!--YAZILIM-->
+                    <p class="display-4 font-italic text-white"> YAZILIM </p> 
+                    <div class="row">
+                        {% for members in teammemberss %}
+                            {% if members.role == 'yazılım' %}
+                                <div class="col-lg-3 mx-auto">
+                                    <div class="our-team">
+                                        <div class="picture">
+                                            <img class="img-fluid" src="{{members.image}}">
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name">{{members.name}}</h3>
+                                            <h4 class="title">{{members.department}}</h4>
+                                        </div>
+                                        <ul class="social">
+                                            <li><a href="{{members.github}}" class="fab fa-github" aria-hidden="true"></a></li>
+                                            <li><a href="{{members.instagram}}" class="fab fa-instagram" aria-hidden="true"></a></li>
+                                            <li><a href="mailto:{{members.email}}" class="fa fa-envelope" aria-hidden="true"></a></li>
+                                           <li><a href="{{members.linkedin}}" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>    
+                    
+                    <!--mekanik-->
+                    <p class="display-4 font-italic text-white"> MEKANİK </p> 
+                    <div class="row">
+                        {% for members in teammemberss %}
+                            {% if members.role == 'mekanik' %}
+                                <div class="col-lg-3 mx-auto">
+                                    <div class="our-team">
+                                        <div class="picture">
+                                            <img class="img-fluid" src="{{members.image}}">
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name">{{members.name}}</h3>
+                                            <h4 class="title">{{members.department}}</h4>
+                                        </div>
+                                        <ul class="social">
+                                            <li><a href="{{members.github}}" class="fab fa-github" aria-hidden="true"></a></li>
+                                            <li><a href="{{members.instagram}}" class="fab fa-instagram" aria-hidden="true"></a></li>
+                                            <li><a href="mailto:{{members.email}}" class="fa fa-envelope" aria-hidden="true"></a></li>
+                                           <li><a href="{{members.linkedin}}" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                </div>
+            {%endif%}
+            </div>    
+        </section>
+            
+    </div>
+
+{% endblock %}
